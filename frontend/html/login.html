@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — Digital Guidance</title>
+  <link rel="stylesheet" href="../Css/login.css">
+</head>
+<body>
+  <main class="container center" style="height:100vh">
+    <div class="card" style="width:360px">
+      <h2>Login</h2>
+      <form class="form" id="login-form">
+        <input class="input" type="email" id="login-email" placeholder="Email" required>
+        <input class="input" type="password" id="login-password" placeholder="Password" required>
+        <button class="btn" type="submit">Login</button>
+        <p class="small">Don’t have an account? <a href="signup.html">Sign up</a></p>
+      </form>
+    </div>
+  </main>
+  <script src="app.js"></script>
+  <script>
+    const loginForm = document.getElementById("login-form");
+    loginForm.addEventListener("submit", function(e){
+      e.preventDefault();
+      const email = document.getElementById("login-email").value;
+      const pass = document.getElementById("login-password").value;
+
+      // For now, just store in localStorage (replace later with backend call)
+      if(email && pass){
+        localStorage.setItem("sip_user", JSON.stringify({email: email}));
+        alert("Login successful!");
+        window.location.href = "dashboard.html"; // redirect after login
+      } else {
+        alert("Invalid login details!");
+      }
+    });
+  </script>
+</body>
+</html>

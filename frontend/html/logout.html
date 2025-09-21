@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Logout — Digital Guidance</title>
+  <link rel="stylesheet" href="../Css/logout.css">
+</head>
+<body>
+  <main class="container center" style="height:100vh">
+    <div class="card" style="width:360px; text-align:center">
+      <h2>Logging out...</h2>
+      <p class="small">Please wait...</p>
+    </div>
+  </main>
+  <script>
+    // Clear user session
+    localStorage.removeItem("sip_user");
+    setTimeout(()=>{
+      alert("You have been logged out.");
+      window.location.href = "login.html";
+    }, 1000);
+  </script>
+</body>
+</html>

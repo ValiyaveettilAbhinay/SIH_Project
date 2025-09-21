@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard — Digital Guidance</title>
+  <link rel="stylesheet" href="../Css/Dashboard.css">
+  <!-- <link rel="stylesheet" href="../Css/logout.css">
+  <link rel="stylesheet" href="../Css/login.css"> -->
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1 class="brand">GovCollegeGuide</h1>
+      <nav>
+        <a href="dashboard.html" aria-label="Dashboard">Dashboard</a>
+        <a href="logout.html" class="btn" aria-label="Logout">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Welcome to Your Dashboard</h2>
+    <p class="small">Select an option below to continue your journey.</p>
+
+    <div class="grid">
+      <!-- Chat with AI -->
+      <div class="card">
+        <h3>Realtime-Chat with Adviser</h3>
+        <p>Ask your questions about courses, careers, or admissions.</p>
+        <a href="chatbot.html" class="btn">Start Chat</a>
+      </div>
+
+      <!-- Quiz on Interested Courses -->
+      <div class="card">
+        <h3>📝 Course Quiz</h3>
+        <p>Take a quick quiz to find courses that match your interests.</p>
+        <a href="Quiz.html" class="btn">Take Quiz</a>
+      </div>
+
+      <!-- Availability of College Seats -->
+      <div class="card">
+        <h3>🎓 College Seats</h3>
+        <p>Check availability of seats for your preferred courses in nearby government colleges.</p>
+        <a href="colleges.html" class="btn">Check Seats</a>
+      </div>
+
+      <!-- Path of Course -->
+      <div class="card">
+        <h3>📈 Path of Course</h3>
+        <p>See the career roadmap and higher education options for your chosen course.</p>
+        <a href="../html/PathCourse.html" class="btn">View Path</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 GovCollegeGuide | Built for Smart India Project</p>
+  </footer>
+
+  <script>
+    // Session check
+    if (!localStorage.getItem("sip_user")) {
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
