@@ -1,0 +1,285 @@
+/* ===== Global Styles ===== */
+:root {
+  --bg: #f9fafb;
+  --card: #ffffff;
+  --accent: #2563eb;
+  --accent-hover: #1e40af;
+  --muted: #6b7280;
+  --text: #111827;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  --radius: 14px;
+  --transition: 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
+.topbar {
+  background: var(--card);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.topbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 22px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--accent);
+}
+
+.topbar nav a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.topbar nav a:hover {
+  color: var(--accent);
+}
+
+/* ===== Controls ===== */
+.controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.controls input,
+.controls select,
+.admin-btn {
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.controls input:focus,
+.controls select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.admin-btn {
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.admin-btn:hover {
+  background: var(--accent-hover);
+}
+
+/* ===== College List ===== */
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+  margin-bottom: 6px;
+  font-size: 18px;
+  color: var(--text);
+}
+
+.card .meta {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.badge {
+  display: inline-block;
+  background: #eff6ff;
+  color: var(--accent);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.programs {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #065f46;
+}
+
+/* ===== Detail Panel ===== */
+.detail-panel {
+  position: fixed;
+  right: 30px;
+  top: 90px;
+  width: 400px;
+  max-height: 75vh;
+  overflow-y: auto;
+  background: var(--card);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.3s ease;
+}
+
+.detail-panel.hidden {
+  display: none;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.close {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.close:hover {
+  color: var(--accent);
+}
+
+.program-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.program-table th,
+.program-table td {
+  padding: 10px;
+  border-bottom: 1px solid #f1f5f9;
+  text-align: left;
+  font-size: 14px;
+}
+
+.program-table th {
+  background: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 9px 14px;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: var(--transition);
+  margin-right: 8px;
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+}
+
+.secondary {
+  background: #f3f4f6;
+  color: var(--text);
+}
+
+.secondary:hover {
+  background: #e5e7eb;
+}
+
+/* ===== Admin Panel ===== */
+.admin-panel {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  width: 450px;
+  max-width: 95%;
+  z-index: 20;
+}
+
+.admin-panel.hidden {
+  display: none;
+}
+
+.admin-panel h3 {
+  margin-bottom: 14px;
+  font-size: 18px;
+  color: var(--accent);
+}
+
+.admin-panel label {
+  display: block;
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+.admin-program-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.admin-program-row input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius);
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}

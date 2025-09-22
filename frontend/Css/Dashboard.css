@@ -19,7 +19,7 @@ body {
 }
 
 .topbar {
-  background-color: #007bff; /* Primary color */
+  background-color: rgb(31, 242, 20); /* Primary color */
   color: white;
   padding: 15px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -102,7 +102,7 @@ h2 {
 }
 
 .card a.btn {
-  background-color: #007bff; /* Button color */
+  background-color: rgb(31, 242, 20) ; /* Button color */
   color: white;
   padding: 10px 15px;
   border-radius: 4px;
@@ -111,14 +111,14 @@ h2 {
 }
 
 .card a.btn:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: rgb(31, 242, 20); /* Darker shade on hover */
   transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 .site-footer {
   text-align: center;
   padding: 20px 0;
-  background-color: #007bff; /* Match top bar */
+  background-color: rgb(31, 242, 20); /* Match top bar */
   color: white;
   position: relative;
   bottom: 0;
